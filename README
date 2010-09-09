@@ -1,0 +1,8 @@
+Another regex tester.
+
+* mainly for practising python
+* a web.py project
+* with jinja2 template 
+* RegexBuddy-like
+* currently runs under nginx
+* maybe implement a GAE version
