@@ -1,1 +1,0 @@
-/var/www/nginx-default/r

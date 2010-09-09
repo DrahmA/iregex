@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+        <title>Lightweight Online RegexBuddy</title> 
+        <script type="text/javascript" charset="utf-8" src="./static/js/jquery-1.4.2.min.js"></script> 
+		<script type="text/javascript" src="/static/js/jquery-ui-1.8.4.custom.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./static/main.js" ></script>
+        <link type="text/css" href="./static/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
+        <link type="text/css" href="./static/style.css" rel="stylesheet" />	
+
+
+    </head>
+    <body>
+        {% for ro in reoptions -%}
+            <input name="{{ ro[0] }}" type="checkbox" id="{{ro[1]}}" class="flag"> 
+                {{ro[2]}} 
+            </input> 
+        {%- endfor %} 
+            <div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Match</a></li>
+				<li><a href="#tabs-2">Replace</a></li>
+				<li><a href="#tabs-3">Split</a></li>
+			</ul>
+            <div id="tabs-1">
+                <textarea id="match1" rows=12 cols=200></textarea> 
+            </div>
+            <div id="tabs-2">
+                <textarea id="match3"  rows=5 cols=200></textarea> 
+                <br/>
+                <textarea id="replace"  rows=5 cols=200></textarea> 
+            </div>
+            <div id="tabs-3">
+                <textarea id="match3"  rows=12 cols=200></textarea> 
+            </div>
+		</div>
+
+        <div id="useZone">
+			<ul>
+				<li><a href="#tabs-5">Test</a></li>
+				<li><a href="#tabs-6">Use</a></li>
+			</ul>
+            <div id="tabs-5">
+                <textarea id="match3"  rows=20 cols=200></textarea> 
+                <div id='result'> 
+                    reseverd;
+                </div>
+
+            </div>
+            <div id="tabs-6">
+                Function: <select id='functions'>
+                    {% for f in functions -%}
+                        <option>{{ f }}</option> 
+                    {%- endfor %}
+                        </select>
+                <textarea id="use_regex"  rows=20 cols=200></textarea> 
+            </div>
+		</div>
+			
+
+   </body>
+</html>
