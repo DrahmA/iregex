@@ -11,11 +11,21 @@
 
     </head>
     <body>
-        {% for ro in reoptions -%}
-            <input name="{{ ro[0] }}" type="checkbox" id="{{ro[1]}}" class="flag"> 
-                {{ro[2]}} 
-            </input> 
-        {%- endfor %} 
+        
+        <h2>iRegex</h2>
+        <div class="desc">a lightweight regex tester</div>
+        <div class="ops">
+            <select id="langs">
+            {% for lang in langs -%}
+                <option>{{ lang }}<option>
+            {%- endfor %}
+            </select>
+            {% for ro in reoptions -%}
+                <input name="{{ ro[0] }}" type="checkbox" id="{{ro[1]}}" class="flag"> 
+                    {{ro[2]}} 
+                </input> 
+            {%- endfor %}
+        </div>
             <div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Match</a></li>
@@ -23,15 +33,15 @@
 				<li><a href="#tabs-3">Split</a></li>
 			</ul>
             <div id="tabs-1">
-                <textarea id="match1" rows=12 cols=200></textarea> 
+                <textarea id="match1" name="regex" rows=12 cols=200 class="regex"></textarea> 
             </div>
             <div id="tabs-2">
-                <textarea id="match3"  rows=5 cols=200></textarea> 
+                <textarea id="match2" name="regex" rows=5 cols=200 class="regex"></textarea> 
                 <br/>
-                <textarea id="replace"  rows=5 cols=200></textarea> 
+                <textarea id="replace" name="replace" rows=5 cols=200 ></textarea> 
             </div>
             <div id="tabs-3">
-                <textarea id="match3"  rows=12 cols=200></textarea> 
+                <textarea id="match3" name="regex" rows=12 cols=200 class="regex"></textarea> 
             </div>
 		</div>
 
@@ -41,9 +51,10 @@
 				<li><a href="#tabs-6">Use</a></li>
 			</ul>
             <div id="tabs-5">
-                <textarea id="match3"  rows=20 cols=200></textarea> 
-                <div id='result'> 
-                    reseverd;
+                <textarea id="text" name="text"  rows=20 cols=200></textarea>
+                <h3>Result</h3>
+                <div id='result'>
+                
                 </div>
 
             </div>
