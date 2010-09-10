@@ -52,8 +52,7 @@ class TextArea:
                 count=len(regex.findall(self.text))
                 if count:
                     self.result= regex.sub(re_wrapper, self.text)
-                    self.result=( "%d matches found:<br/><pre>" % count )  + (self.result) +"</pre
-                    >"
+                    self.result=( "%d matches found:<br/><pre>" % count )  + (self.result) +"</pre>"
 
                 else:
                     self.result="No match."

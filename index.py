@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/dlzhang/local/bin/python
 import web
 import re
 from jinja2 import Environment, PackageLoader
