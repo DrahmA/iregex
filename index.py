@@ -8,6 +8,7 @@ from textarea import TextArea
 urls = ("/", "index",
         "/option",'options',
         "/text", "textarea",
+        
         )
 reoptions = [
             ('s', 'dotall', 'Dot Match All'),
@@ -45,7 +46,6 @@ class options:
         i=web.input()
         try:
             flag.set(i.name,i.value)
-            return flag.__str__()
         except:
             raise ValueError
 

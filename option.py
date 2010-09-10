@@ -31,7 +31,4 @@ class Option:
         elif name == 'action':
             self.action = int(value)
         elif name == 'lang':
-            print "before", self.lang
-            self.lang = value
-            print "after", self.lang
-
+            self.lang = value 

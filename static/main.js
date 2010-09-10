@@ -1,18 +1,5 @@
-$(document).ready(function() { 
-    function option(name,value)
-    {
-        $.post("/option", {name:name, value:value}, function(data){
-            $("#result").html(data);
-            });
-    }
+$(document).ready(function() {
     
-    //change the regex options
-    $(".flag").click(function(){
-        var name=$(this).attr("name");
-        var checked=$(this).attr("checked");
-        option(name, checked);
-        });
-
     //Tabs
     $('#tabs').tabs();
     $('#useZone').tabs();
@@ -22,14 +9,14 @@ $(document).ready(function() {
         function() { $(this).addClass('ui-state-hover'); }, 
         function() { $(this).removeClass('ui-state-hover'); }
     );
-        
-    //tab changed; so, match:replace:split changed
-    $( "#tabs" ).bind( "tabsshow", function(event, ui) {
-        var sel= $( this ).tabs( "option", "selected" );
-        option("action", sel);
-        $(".regex").change();
-    });
+    //general option post 
+    function option(name,value)
+    {
+        $.post("/option", {name:name, value:value});
+    }
     
+    
+   //textarea changes
     $(".regex, #replace, #text").change(function(){
         
         $(".regex").change(function(){
@@ -42,6 +29,22 @@ $(document).ready(function() {
             $("#result").html(data);
             });
         });
+    
+    //change the regex options
+    $(".flag").click(function(){
+        var name=$(this).attr("name");
+        var checked=$(this).attr("checked");
+        option(name, checked);
+        $(".regex").change();
+        });
+
+
+        
+    //tab changed; so, match:replace:split changed
+    $( "#tabs" ).bind( "tabsshow", function(event, ui) {
+        var sel= $( this ).tabs( "option", "selected" );
+        option("action", sel);
+        $(".regex").change();
     });
     
     //notify the CGI that the language has been changed 
@@ -50,4 +53,4 @@ $(document).ready(function() {
         option("lang", lang);
         $(".regex").change();
         });
-    
+});

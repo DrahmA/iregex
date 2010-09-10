@@ -49,3 +49,30 @@ h2{
     margin-top:-12px;
     padding: 4px;
     }
+/* textarea resizable */
+
+.ui-resizable-se {
+    bottom: 17px;
+    }
+textarea{
+    
+    overflow: auto;
+    height: 100px; padding: 0.5em;
+    width: 100%;
+    spellcheck: false;
+   }
+#match2{
+    margin-bottom:5px;
+}
+
+#replace{
+    margin-top:5px;
+}
+
+.result{
+    border:1px dotted;
+    margin-bottom: 4px;
+    padding: 4px;
+    height: auto;
+    min-height: 20px;
+    }

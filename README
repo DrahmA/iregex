@@ -7,3 +7,10 @@ Another regex tester.
 * RegexBuddy-like
 * currently runs under nginx
 * maybe implement a GAE version
+
+TODO:
+	<> in Replace;
+        highlight recursive error;
+	highlight captured text;
+	cache problem;
+	USE.
